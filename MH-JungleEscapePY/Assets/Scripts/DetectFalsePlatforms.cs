@@ -8,6 +8,13 @@ public class DetectFalsePlatforms : MonoBehaviour
 
     void Update()
     {
-        hit = Physics.Raycast(transform.position, transform.forward);
-    }
+        hit = Physics.Raycast(transform.position, transform.forward, 1 << 8);
+    
+if( hit == true){
+    Debug.LogWarning("Be careful!");
+}else {
+    Debug.Log("All good!");
+}
+
+}
 }
